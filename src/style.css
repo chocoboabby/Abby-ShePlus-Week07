@@ -18,19 +18,18 @@ ul {
 
 li {
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
-.date-time .weather-info {
+.date-time {
   position: relative;
-  top: -50px;
-  bottom: 40px;
+  top: -100px;
   margin: 0 auto;
 }
 
-.day {
-  margin: 10px auto;
+.weather-info {
+  position: relative;
+  top: -100px;
+  margin: 0 auto;
 }
 
 .location-pin {
@@ -58,7 +57,7 @@ li {
   color: #9896f1;
   text-transform: capitalize;
   position: relative;
-  top: -50px;
+  bottom: 100px;
 }
 
 #condition {
