@@ -1,0 +1,87 @@
+body {
+  padding: 50px;
+  font-family: "Special Elite", cursive;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.date-time .weather-info {
+  position: relative;
+  top: -50px;
+  bottom: 40px;
+  margin: 0 auto;
+}
+
+.day {
+  margin: 10px auto;
+}
+
+.location-pin {
+  color: #9896f1;
+  font-size: 30px;
+  position: relative;
+  left: 5px;
+  top: 10px;
+}
+
+.location-pin:hover {
+  color: #d59bf6;
+}
+
+.search-btn {
+  margin: 10px 0 0 0;
+  color: #9896f1;
+}
+
+.weekly-temp {
+  font-size: 11px;
+}
+
+#city-name {
+  color: #9896f1;
+  text-transform: capitalize;
+  position: relative;
+  top: -50px;
+}
+
+#condition {
+  text-transform: capitalize;
+}
+
+#celcius {
+  font-size: 15px;
+  position: relative;
+  bottom: 25px;
+  margin: 0 auto;
+}
+
+#fahrenheit {
+  font-size: 15px;
+  position: relative;
+  bottom: 25px;
+  left: -10px;
+  margin: 0 auto;
+}
+
+#weather-icon {
+  position: relative;
+  left: 150px;
+  bottom: 100px;
+}
