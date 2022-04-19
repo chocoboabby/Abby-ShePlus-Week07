@@ -1,3 +1,4 @@
+//date time
 let now = new Date();
 
 function formatDate(today) {
@@ -27,24 +28,28 @@ function formatDate(today) {
 let timeAndDate = document.querySelector("#time-date");
 timeAndDate.innerHTML = formatDate(now);
 
+//weather info
 function displayWeather(response) {
   console.log(response.data);
-  document.querySelector(
-    "#city-name"
-  ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
-  document.querySelector("#main-temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#feels-like").innerHTML = `Feels like ${Math.round(
+
+  let mainTemperature = document.querySelector("#main-temp");
+  let cityName = document.querySelector("#city-name");
+  let feelsLike = document.querySelector("#feels-like");
+  let humidity = document.querySelector("#humidity");
+  let windSpeed = document.querySelector("#wind-speed");
+  let iconElement = document.querySelector("#weather-icon");
+
+  celciusTemp = response.data.main.temp;
+
+  cityName.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
+  mainTemperature.innerHTML = Math.round(response.data.main.temp);
+  feelsLike.innerHTML = `Feels like: ${Math.round(
     response.data.main.feels_like
   )}°C`;
-  document.querySelector(
-    "#humidity"
-  ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
-  document.querySelector("#wind-speed").innerHTML = `Wind Speed: ${Math.round(
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  windSpeed.innerHTML = `Wind Speed: ${Math.round(
     response.data.wind.speed
   )} km/h`;
-  let iconElement = document.querySelector("#weather-icon");
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -52,6 +57,7 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+//search city
 function searchCity(city) {
   let apiKey = "76bd1c0ff8311a8d7f2ae10658044361";
   let unit = "metric";
@@ -69,7 +75,7 @@ function enterCity(event) {
 let submitButton = document.querySelector("#city-form");
 submitButton.addEventListener("submit", enterCity);
 
-//bonus
+//search current location
 function searchLocation(position) {
   let apiKey = "76bd1c0ff8311a8d7f2ae10658044361";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
@@ -87,3 +93,26 @@ clickCurrentLocation.addEventListener("click", searchCurrentLocation);
 
 //para lumabas na default search ito kung sakaling walang data sa indexhtml
 searchCity("Davao");
+
+//change to F
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#main-temp");
+  let fahrenheitTemp = (celciusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+let fahrenheitClick = document.querySelector("#fahrenheit-temp");
+fahrenheitClick.addEventListener("click", displayFahrenheit);
+
+//change to C
+function displayCelcius(event) {
+  event.preventDefault;
+  let tempElement = document.querySelector("#main-temp");
+  tempElement.innerHTML = Math.round(celciusTemp);
+}
+
+let celciusTemp = null;
+
+let celciusClick = document.querySelector("#celcius-temp");
+celciusClick.addEventListener("click", displayCelcius);

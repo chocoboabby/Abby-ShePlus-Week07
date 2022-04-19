@@ -33,7 +33,7 @@ li {
 }
 
 .location-pin {
-  color: #9896f1;
+  color: red;
   font-size: 30px;
   position: relative;
   left: 5px;
@@ -41,12 +41,11 @@ li {
 }
 
 .location-pin:hover {
-  color: #d59bf6;
+  color: rgb(252, 56, 56);
 }
 
 .search-btn {
   margin: 10px 0 0 0;
-  color: #9896f1;
 }
 
 .weekly-temp {
@@ -54,7 +53,6 @@ li {
 }
 
 #city-name {
-  color: #9896f1;
   text-transform: capitalize;
   position: relative;
   bottom: 100px;
@@ -64,19 +62,23 @@ li {
   text-transform: capitalize;
 }
 
-#celcius {
+#celcius-temp {
   font-size: 15px;
   position: relative;
   bottom: 25px;
   margin: 0 auto;
+  cursor: default;
+  color: #212529;
 }
 
-#fahrenheit {
+#fahrenheit-temp {
   font-size: 15px;
   position: relative;
   bottom: 25px;
-  left: -10px;
+  left: -15px;
   margin: 0 auto;
+  cursor: default;
+  color: #212529;
 }
 
 #weather-icon {
